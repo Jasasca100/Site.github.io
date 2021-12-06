@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site do mozão</title>
+    <style type="text/css">
+        body{
+        text-align: center;
+        }
+        label{
+            color:blue ;
+
+        }
+        input {
+            background: red;
+            border: chartreuse;
+            width: 500px;
+            border-radius: 50px;
+            border-width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+        <h1 id="sla">Quão bem você esta hoje?</h1>
+        <h1 id="h3"></h1>
+       <br>
+        <button id="proxima"onclickou="proximaPagina()">Próxima página</button>
+        <input type="range" id="range" min="0" max="100" placeholder="aaaaa to asadas"><br>
+        <button id="salvar"onclick="salvar()">Salvar</button>
+        <p id="h1"></p>
+    
+    <script>
+        function proximaPagina(){
+         window.open("https://jasasca100.github.io/Sitedomozao.github.io/index2.html");
+        }
+        function salvar(){
+         var range = document.getElementById("range").value;
+        if (range <= 50) {
+
+            document.getElementById("h1").innerHTML = range + " melhore";
+        }
+        else{
+
+            document.getElementById("h1").innerHTML = range + " tudo ok";
+        }
+        
+        }
+        setTimeout(function run(){
+            var range = document.getElementById("range").value;
+            document.getElementById("h3").innerHTML = range + " %";
+            setTimeout(run, 20);
+        }, 20);
+
+    </script>
+</body>
+</html>
